@@ -12,6 +12,7 @@ describe('getMany', () => {
 
     const result = client.query('Action').getMany().print();
 
+    console.log('result', result._hash);
     expect(result._hash).toMatchSnapshot();
     expect(result._queryName).toMatchSnapshot();
     // Because ownerId is a foreignKey, it won't be included
